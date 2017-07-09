@@ -11,7 +11,11 @@ public class LazySingletonThree {
     private LazySingletonThree() {
     }
 
-    public static LazySingletonThree getSingleton() {
+    public void run() {
+        System.out.println(("LazySingletonThree is running"));
+    }
+
+    public static LazySingletonThree getInstance() {
         if (instance == null) {                         //Single Checked
             synchronized (LazySingletonThree.class) {
                 if (instance == null) {                 //Double Checked

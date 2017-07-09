@@ -11,6 +11,10 @@ public class LazySingletonOne {
     private LazySingletonOne() {
     }
 
+    public void run() {
+        System.out.println(("LazySingletonOne is running"));
+    }
+
     public static LazySingletonOne getInstance() {
         if (instance == null) {
             instance = new LazySingletonOne();

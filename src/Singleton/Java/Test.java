@@ -6,8 +6,13 @@ package Singleton.Java;
  */
 public class Test {
     public static void main(String[] args) {
-        SingletonHungryOne.getInstance();
+        HungrySingletonOne.getInstance().run();
+        HungrySingletonTwo.getInstance().getValue();
 
-        SingletonHungryTwo.getHandle().getValue();
+        LazySingletonOne.getInstance().run();
+        LazySingletonTwo.getInstance().run();
+        LazySingletonThree.getInstance().run();
+
+        EnumSingleton.INSTANCE.printPreference();
     }
 }

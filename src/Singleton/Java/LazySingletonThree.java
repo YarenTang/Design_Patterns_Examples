@@ -9,6 +9,7 @@ public class LazySingletonThree {
     private static LazySingletonThree instance;
 
     private LazySingletonThree() {
+        System.out.println(("LazySingletonThree is created"));
     }
 
     public void run() {

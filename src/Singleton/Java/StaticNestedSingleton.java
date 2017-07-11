@@ -7,7 +7,9 @@ package Singleton.Java;
  */
 final class StaticNestedSingleton {
     // 声明为 final 能防止其在派生类中被 clone
-    private StaticNestedSingleton(){ }
+    private StaticNestedSingleton(){
+        System.out.println(("StaticNestedSingleton is created"));
+    }
 
     public static StaticNestedSingleton getInstance()
     {
@@ -18,6 +20,11 @@ final class StaticNestedSingleton {
     static class Nested
     {
         private static StaticNestedSingleton instance = new StaticNestedSingleton();
+    }
+
+    public static void main(String[] args) {
+        StaticNestedSingleton.getInstance();
+        StaticNestedSingleton.getInstance();
     }
 }
 

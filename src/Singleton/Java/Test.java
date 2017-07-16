@@ -7,9 +7,7 @@ package Singleton.Java;
 public class Test {
     public static void main(String[] args) {
 
-
         System.out.println("<---------------------分割线----------------------->");
-
         HungrySingleton.getInstance().run();
         System.out.println("StaticNestedSingleton -> getValue is called: "+ StaticNestedSingleton.getInstance());
 

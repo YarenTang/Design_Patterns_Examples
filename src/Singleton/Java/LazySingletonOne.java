@@ -5,14 +5,20 @@ package Singleton.Java;
  * <p>
  * 懒汉模式 基础版（线程不安全
  */
-public class LazySingletonOne {
+public class LazySingletonOne implements Runnable{
     private static LazySingletonOne instance;
 
     private LazySingletonOne() {
+        System.out.println(("LazySingletonOne is created"));
     }
 
+    @Override
     public void run() {
-        System.out.println(("LazySingletonOne is running"));
+        long beginTime = System.currentTimeMillis();
+        for(int i=0;i<10000;i++){
+            LazySingletonOne.getInstance();
+        }
+        System.out.println(System.currentTimeMillis() - beginTime);
     }
 
     public static LazySingletonOne getInstance() {
@@ -21,4 +27,15 @@ public class LazySingletonOne {
         }
         return instance;
     }
+
+    public static void main(String[] args) {
+//        LazySingletonOne.run();  // 验证是否 lazy
+
+        for(int i=0;i<5;i++){
+            new Thread(new LazySingletonOne()).start();
+        }
+
+    }
+
+
 }

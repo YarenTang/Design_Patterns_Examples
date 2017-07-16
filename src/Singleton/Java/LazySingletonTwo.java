@@ -9,6 +9,7 @@ public class LazySingletonTwo {
     private static LazySingletonTwo instance;
 
     private LazySingletonTwo() {
+        System.out.println(("LazySingletonTwo is created"));
     }
 
     public void run() {
@@ -19,6 +20,7 @@ public class LazySingletonTwo {
         if (instance == null) {                         //Single Checked
             synchronized (LazySingletonTwo.class) {
                 if (instance == null) {                 //Double Checked
+
                     instance = new LazySingletonTwo();
                 }
             }

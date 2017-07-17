@@ -10,5 +10,30 @@ class Account(builder: AccountBuilder) {
     val age = builder.age
   }
 
+class AccountBuilder {
+  var name = ""
+  var nickname = ""
+  var age = 0
+
+  def setName(name:String):AccountBuilder = {
+    this.name = name
+    this
+  }
+
+  def setNickname(nickname:String):AccountBuilder = {
+    this.nickname = nickname
+    this
+  }
+
+  def setAge(age:Int):AccountBuilder = {
+    this.age = age
+    this
+  }
+
+  def build()  = {
+    new Account(this)
+  }
+}
+
 
 

@@ -1,12 +1,10 @@
-package Prototype.Java.ShallowCopy;
-
-import java.util.ArrayList;
+package Prototype.Java.DeepCopy.ShallowCopyPlus;
 
 /**
  * Created by prefert on 2017/7/27.
  */
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Cell cellA, cellB, cellC;
 
         cellA = new Cell("AAAGTCTGAC", new Organelle("细胞质", "细胞核"));
@@ -18,7 +16,7 @@ public class Test {
         cellC = cellA;
 
         System.out.println("cellA == cellB ? " + (cellA == cellB));
-        System.out.println("cellA.Organelle == cellB.Organelle ? " + (cellA.getOrganelle() == cellB.getOrganelle()));
+        System.out.println("cellA.organelle == cellB.organelle ? " + (cellA.getOrganelle() == cellB.getOrganelle()));
         System.out.println("cellA-class == cellB-class? :" + (cellA.getClass() == cellB.getClass()));
 
         System.out.println("cellB == cellC ? :" + (cellC == cellB));

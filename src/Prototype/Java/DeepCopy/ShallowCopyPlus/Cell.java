@@ -1,4 +1,6 @@
-package Prototype.Java.ShallowCopy;
+package Prototype.Java.DeepCopy.ShallowCopyPlus;
+
+
 /**
  * Created by prefert on 2017/7/27.
  */
@@ -36,12 +38,15 @@ public class Cell implements Cloneable {
     }
 
     @Override
-    public Cell clone() {
+    public Cell clone() throws CloneNotSupportedException {
         Cell cellCopy = null;
         try {
             cellCopy = (Cell) super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
+        }
+        if (cellCopy != null) {
+            cellCopy.organelle = (Organelle) organelle.clone();
         }
         return cellCopy;
     }

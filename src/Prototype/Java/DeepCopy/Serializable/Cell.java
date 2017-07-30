@@ -1,8 +1,10 @@
-package Prototype.Java.ShallowCopy;
+package Prototype.Java.DeepCopy.Serializable;
+
+import java.io.*;
 /**
  * Created by prefert on 2017/7/27.
  */
-public class Cell implements Cloneable {
+public class Cell implements Serializable {
     private String dna;
     private Organelle organelle; // 细胞器
 
@@ -35,14 +37,16 @@ public class Cell implements Cloneable {
                 '}';
     }
 
-    @Override
-    public Cell clone() {
-        Cell cellCopy = null;
-        try {
-            cellCopy = (Cell) super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return cellCopy;
+    // 序列化实现深拷贝
+    public Cell deepClone() throws CloneNotSupportedException, IOException, ClassNotFoundException {
+        // 序列化（将对象写入流中）
+        ByteArrayOutputStream bos=new  ByteArrayOutputStream();
+        ObjectOutputStream oos=new  ObjectOutputStream(bos);
+        oos.writeObject(this);
+
+        // 反序列化（将对象从流中取出）
+        ByteArrayInputStream bis=new  ByteArrayInputStream(bos.toByteArray());
+        ObjectInputStream ois=new  ObjectInputStream(bis);
+        return  (Cell)ois.readObject();
     }
 }

@@ -21,11 +21,7 @@ class Pillar {
     }
 }
 
-interface IBuilding {
-    public void show();
-}
-
-class Building implements IBuilding {
+class Building   {
     private Door door;
     private Wall wall;
     private Pillar pillar;
@@ -47,7 +43,7 @@ public class Test {
         Wall wall = new Wall();
         Pillar pillar = new Pillar();
 
-        IBuilding building = new Building(door, wall, pillar);
+        Building building = new Building(door, wall, pillar);
         building.show();
     }
 }

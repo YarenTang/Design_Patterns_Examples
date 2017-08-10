@@ -1,6 +1,4 @@
-package Factory.Method;
-
-import Factory.Traditional.*;
+package Factory.Method.Java;
 
 
 /**
@@ -44,7 +42,7 @@ class Building implements IBuilding {
 interface IFactory {
     public IBuilding createBuilding();
 }
-class Factory implements IFactory {
+class ConstructionFactory implements IFactory {
     public IBuilding createBuilding() {
         Door door = new Door();
         Wall wall = new Wall();
@@ -54,7 +52,7 @@ class Factory implements IFactory {
 }
 public class Test {
     public static void main(String[] args) {
-        IFactory factory = new Factory();
+        IFactory factory = new ConstructionFactory();
         IBuilding building = factory.createBuilding();
         building.show();
     }

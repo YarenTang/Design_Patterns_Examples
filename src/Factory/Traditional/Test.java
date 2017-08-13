@@ -42,7 +42,6 @@ public class Test {
         Door door = new Door();
         Wall wall = new Wall();
         Pillar pillar = new Pillar();
-
         Building building = new Building(door, wall, pillar);
         building.show();
     }

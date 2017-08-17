@@ -37,12 +37,12 @@ object Test2 extends App{
 }
 
 // 简洁版
-object IBuilding {
-  def apply(kind: String): IBuilding = kind match {
-    case "Simple" =>   SimpleBuilding(new Door, new Wall, new Pillar)
-    case "Luxury" =>   LuxuryBuilding(new Door, new Wall, new Pillar)
-  }
-}
+//object IBuilding {
+//  def apply(kind: String): IBuilding = kind match {
+//    case "Simple" =>   SimpleBuilding(new Door, new Wall, new Pillar)
+//    case "Luxury" =>   LuxuryBuilding(new Door, new Wall, new Pillar)
+//  }
+//}
 
 object Test3 extends App{
   val iBuilding3:IBuilding = IBuilding("Simple")

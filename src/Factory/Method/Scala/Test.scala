@@ -19,6 +19,14 @@ trait IBuilding {
   def show()
 }
 
+// 简洁版
+object IBuilding {
+  def apply(kind: String): IBuilding = kind match {
+    case "Simple" =>   SimpleBuilding(new Door, new Wall, new Pillar)
+    case "Luxury" =>   LuxuryBuilding(new Door, new Wall, new Pillar)
+  }
+}
+
 case class Building(door: Door,
                     wall: Wall,
                     pillar: Pillar) extends IBuilding {

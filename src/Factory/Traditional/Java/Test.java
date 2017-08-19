@@ -1,4 +1,4 @@
-package Factory.Traditional;
+package Factory.Traditional.Java;
 
 /**
  * Created by prefert on 2017/8/9.

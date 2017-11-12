@@ -54,8 +54,8 @@ public class SimpleFactory {
 
 class Client {
     public static void main(String[] args) {
-        BuildingA buildingA = (BuildingA) SimpleFactory.getProduct("bedroom");
-        BuildingB buildingB = (BuildingB) SimpleFactory.getProduct("kitchen");
+        IBuilding buildingA =  SimpleFactory.getProduct("bedroom");
+        IBuilding buildingB =  SimpleFactory.getProduct("kitchen");
         buildingA.build();
         buildingB.build();
     }
